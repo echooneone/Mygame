@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class learntest : MonoBehaviour
 {
+    //int a[10] = { 1, 2, 5, 7, 3, 4, 8, 6 };
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,14 @@ public class learntest : MonoBehaviour
     {
         
     }
-    private void OnGUI()
-    {
-        GUI.Box(new Rect(10f, 10f, 100f, 100f), "test");
-        if (GUI.Button(new Rect(10f, 120f, 100f, 50f), "Button"))
-        {
-            //按钮点击事件
-            Debug.Log(Screen.width);
-        }
-    }
+    
+    //private void OnGUI()
+    //{
+    //    GUI.Box(new Rect(10f, 10f, 100f, 100f), "test");
+    //    if (GUI.Button(new Rect(10f, 120f, 100f, 50f), "Button"))
+    //    {
+    //        //按钮点击事件
+    //        Debug.Log(Screen.width);
+    //    }
+    //}
 }

@@ -2,50 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(playerController))]
+[RequireComponent(typeof(gunController))]
 public class Player : MonoBehaviour
 {
-    public float inputX;
-    public float inputZ;
-    public float speed = 5f;
-    public Camera viewCamera;
-    Vector3 curSpeed;
-    Vector3 newPosition;
-    // Start is called before the first frame update
-    void Start()
+    public float moveSpeed=5f;
+    Camera viewCamera;
+    playerController controller;
+    gunController gunController;
+     void Start()
     {
-        
+        viewCamera = Camera.main;
+        controller = GetComponent<playerController>();
+        gunController = GetComponent<gunController>();
     }
-
-    // Update is called once per frame
-    void Update()
+     void Update()
     {
-        
-        turnToMouse();
-        
+        MovementInput();
+        TurnToMouse();
+        WeaponInput();
+        SwitchWeapon();
     }
-    private void FixedUpdate()
+    void MovementInput()
     {
-        input();
-        beforeMove();
-        Move();
+        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+        if (controller != null)
+            controller.Move(moveVelocity);
     }
-    void beforeMove()
-    {
-        curSpeed.x = speed * inputX;
-        curSpeed.z = speed * inputZ;
-        newPosition.x = curSpeed.x * Time.deltaTime;
-        newPosition.z = curSpeed.z * Time.deltaTime;
-    }
-    void Move()
-    {
-        this.transform.Translate(newPosition, Space.World);
-    }
-    void input()
-    {
-        inputX = Input.GetAxis("Horizontal");
-        inputZ = Input.GetAxis("Vertical");
-    }
-    void turnToMouse()
+    void TurnToMouse()
     {
         Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up,Vector3.zero);//以法线、点创建平面，面高为枪管高度
@@ -56,6 +41,20 @@ public class Player : MonoBehaviour
                                                       // Debug.DrawLine(ray.origin,point, Color.red);
             Vector3 correctedPoint = new Vector3(point.x, this.transform.position.y, point.z);
            this.transform.LookAt(correctedPoint);
+        }
+    }
+    void WeaponInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            gunController.Shoot();
+        }
+    }
+    void SwitchWeapon()
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            gunController.SwitchWeapon();
         }
     }
 }

@@ -195,6 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2711903403160784857}
+  - component: {fileID: 858694239138813228}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -220,6 +221,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &858694239138813228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711903403160784858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0e16f06b8ef340b24d05fd404d7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 5349246775257265280}
+  projectile: {fileID: 8630607275788809240, guid: d292743d93ed47049ba8b5036394b0f9,
+    type: 3}
+  msBetweenShots: 300
+  muzzleVelocity: 20
 --- !u!1 &2711903403539792886
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5349246775257265280}
   m_Layer: 0
-  m_Name: firepoint
+  m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

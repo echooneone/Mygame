@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class playerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Vector3 velocity;
+     Rigidbody rigidbody;
+
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector3 _velocity)
     {
-        
+        velocity = _velocity;
+    }
+    public void FixedUpdate()
+    {
+        rigidbody.MovePosition(rigidbody.position + velocity * Time.fixedDeltaTime);
     }
 }

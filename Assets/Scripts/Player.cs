@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
         WeaponInput();
         SwitchWeapon();
     }
+
+    #region 移动输入
     void MovementInput()
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
@@ -30,6 +32,9 @@ public class Player : MonoBehaviour
         if (controller != null)
             controller.Move(moveVelocity);
     }
+    #endregion
+
+    #region 角色旋转视角
     void TurnToMouse()
     {
         Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
@@ -43,13 +48,19 @@ public class Player : MonoBehaviour
            this.transform.LookAt(correctedPoint);
         }
     }
+    #endregion
+
+    #region 武器输入 
     void WeaponInput()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)&&gunController!=null)
         {
             gunController.Shoot();
         }
     }
+    #endregion
+
+    #region 切换武器
     void SwitchWeapon()
     {
         if(Input.GetKeyDown(KeyCode.Q))
@@ -57,4 +68,5 @@ public class Player : MonoBehaviour
             gunController.SwitchWeapon();
         }
     }
+    #endregion
 }

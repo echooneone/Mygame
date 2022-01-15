@@ -5,13 +5,14 @@ using Unity.MLAgents.Actuators;
 
 public class RollerAgent : Agent
 {
-    public Transform Target;
+     Transform Target;
     public float speed = 10;
     Rigidbody rBody;
 
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
+        Target = GameObject.FindWithTag("Player").gameObject.transform;
     }
 
     //进入新一轮训练时调用

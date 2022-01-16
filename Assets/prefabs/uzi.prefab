@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5326400667422239703}
   - component: {fileID: 4462561103067034950}
   - component: {fileID: 7519882342207731306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4734894771431556017}
   - component: {fileID: 2014821670674290524}
   - component: {fileID: 205110808308055312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4210328084812579668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6966903306195209123}
   - component: {fileID: 4215126772663364933}
   - component: {fileID: 1454415682751594990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70677084605521224}
   - component: {fileID: 5441917702685129635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: uzi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7464901219685969201}
   - component: {fileID: 4892742879780530147}
   - component: {fileID: 5537547774597289043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 939677463243691176}
   - component: {fileID: 7275763127206236918}
   - component: {fileID: 2732133825326292220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

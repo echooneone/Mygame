@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     Vector3 velocity;
-     Rigidbody rigidbody;
+    new Rigidbody rigidbody;
 
     void Start()
     {
